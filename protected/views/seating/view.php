@@ -1,0 +1,30 @@
+<?php
+/* @var $this SeatingController */
+/* @var $model Seating */
+
+$this->breadcrumbs=array(
+	'Seatings'=>array('index'),
+	$model->id,
+);
+
+$this->menu=array(
+	array('label'=>'List Seating', 'url'=>array('index')),
+	array('label'=>'Create Seating', 'url'=>array('create')),
+	array('label'=>'Update Seating', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete Seating', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage Seating', 'url'=>array('admin')),
+);
+?>
+
+<h1>View Seating #<?php echo $model->id; ?></h1>
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'id',
+		'table_id',
+		'user_id',
+		'guest_id',
+		'date',
+	),
+)); ?>
